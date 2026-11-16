@@ -1,6 +1,7 @@
 lift = input("lift? ")
 weight = input("weight? ")
 reps = input("reps? ")
+sets = input("sets? ")
 print (lift, weight, "lb x", reps)
-volume = (int(weight) * int(reps))
+volume = (int(weight) * int(reps) * int(sets))
 print ("volume:", volume, "lb")
