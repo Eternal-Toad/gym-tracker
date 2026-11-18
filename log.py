@@ -7,3 +7,5 @@ volume = (int(weight) * int(reps) * int(sets))
 print ("volume:", volume, "lb")
 with open("savedlifts.txt", "a") as file:
     file.write (f"{lift} for {weight} for reps {reps} and for sets {sets} for a total of {volume}\n")
+with open("savedlifts.txt", "r") as file:
+    print(file.read())
