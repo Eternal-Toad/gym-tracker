@@ -9,7 +9,11 @@ while True:
     reps = input("reps? ")
     sets = input("sets? ")
     print (lift, weight, "lb x", reps, "reps", sets, "sets")
-    volume = (int(weight) * int(reps) * int(sets))
+    try:
+        volume = (int(weight) * int(reps) * int(sets))
+    except ValueError:
+        print("please type a number")
+        continue
     print ("volume:", volume, "lb")
     with open("savedlifts.txt", "a") as file:
         file.write (f"todays date is {today} and todays lift is {lift} for {weight}lbs for reps {reps} and for sets {sets} for a total of {volume}lbs\n")
