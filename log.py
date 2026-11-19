@@ -16,7 +16,7 @@ while True:
         continue
     print ("volume:", volume, "lb")
     with open("savedlifts.txt", "a") as file:
-        file.write (f"todays date is {today} and todays lift is {lift} for {weight}lbs for reps {reps} and for sets {sets} for a total of {volume}lbs\n")
+        file.write (f"{today} | {lift} | {weight}lbs x reps {reps} x sets {sets} | {volume}lbs\n")
 print("=== your history ===")
 with open("savedlifts.txt", "r") as file:
     print(file.read())
