@@ -1,6 +1,9 @@
 from datetime import date
 def calc_volume(weight, reps, sets):
     return(weight * reps * sets)
+def save_lift (today, lift, weight, reps, sets, volume):
+    with open("savedlifts.txt", "a") as file:
+        file.write (f"{today} | {lift} | {weight}lbs x reps {reps} x sets {sets} | {volume}lbs\n")
 today = date.today()
 print(f"today is {today}")
 logs = 0
@@ -21,8 +24,7 @@ while True:
     print ("volume:", volume, "lb")
     logs = logs + 1
     total_volume = total_volume + volume
-    with open("savedlifts.txt", "a") as file:
-        file.write (f"{today} | {lift} | {weight}lbs x reps {reps} x sets {sets} | {volume}lbs\n")
+    save_lift (today, lift, weight, reps, sets, volume)
 print(f"you logged {logs} lifts today.\n")
 print(f"your total volume is {total_volume}\n")
 print("=== your history ===")
